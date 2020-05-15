@@ -208,7 +208,9 @@ function extractEmails(str) {
  */
 function getRectangleString(width, height) {
   let result = '';
-  for (let i = 1; i <= width; i += 1) { result = result.concat('-'); }
+  for (let i = 1; i <= width; i += 1) {
+    result = result.concat('-');
+  }
   const result2 = result.concat('\\n');
   let result3 = '';
   for (let j = 1; j <= height; j += 1) { result3 = result3.concat(result2); }
