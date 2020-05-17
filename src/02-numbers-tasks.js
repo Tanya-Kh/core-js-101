@@ -245,16 +245,14 @@ function isPrime(n) {
  *   toNumber(42, 0) => 42
  *   toNumber(new Number(42), 0) => 42
  */
-function toNumber(str, defaultValue) {
-  let retValue = defaultValue;
-  if (str !== null) {
-    if (str.length > 0) {
-      if (!Number.isNaN(str)) {
-        retValue = parseInt(str, 10);
-      }
-    }
+function toNumber(value, def) {
+  let result = def;
+  if (typeof value === 'number' || Number(value)) {
+    result = value;
+  } else if (typeof value !== 'number' && value !== null && !Number.isNaN(Number(value))) {
+    result = parseInt(value, 2);
   }
-  return retValue;
+  return result;
 }
 
 module.exports = {
